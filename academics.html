@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>RGM International School</title>
+    <style>
+        /* Basic Reset */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(255, 255, 255, 1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background 0.4s ease-in-out;
+        }
+
+        .navbar .logo img {
+            height: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #75e5e9;
+        }
+
+        /* Sub Navbar */
+        .sub-navbar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 0;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 100px; /* Adjust if needed */
+            position: fixed;
+            top: 10px; /* Place it below the main navbar */
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .sub-navbar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .sub-navbar a:hover {
+            color: #75e5e9;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 900px;
+            margin: 300px auto; /* Adjusted margin to accommodate fixed navbar */
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Text Box Styling */
+        .text-box {
+            background-color: #f9f9f9; /* Light grey background */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the box */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            margin-bottom: 20px; /* Space between boxes */
+        }
+
+        /* Alternating Paragraph Colors */
+        .text-box p {
+            color: #333; /* Dark grey text */
+        }
+
+        /* Alternating Layout for Paragraphs and Images */
+        .content .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .content .section:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .content .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .content .section .text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .content .section img {
+            flex: 1;
+            max-width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enquiry Section */
+        .enquiry {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .enquiry a {
+            display: inline-block;
+            background-color: #0073e6;
+            color: #fff;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .enquiry a:hover {
+            background-color: #005bb5;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 20px;
+            }
+
+            .navbar .logo img {
+                height: 60px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .sub-navbar {
+                flex-wrap: wrap;
+                padding: 10px 0;
+                margin-top: 80px;
+            }
+
+            .sub-navbar a {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .content {
+                margin: 200px auto;
+                padding: 10px;
+            }
+
+            .content .section {
+                flex-direction: column;
+            }
+
+            .content .section .text {
+                padding: 10px;
+            }
+
+            .content .section img {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+
+            .text-box {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .enquiry a {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+        }
+        .footer {
+            background: #0a0a23;
+            color: white;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content {
+            max-width: 50%;
+        }
+
+        .footer-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .footer-content p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .footer-content i {
+            margin-right: 10px;
+        }
+
+        .footer-image img {
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            background: #0a0a23;
+            color: white;
+            padding: 15px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/Rgm.png" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="academics.html">Academics</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sub Navbar -->
+    <nav class="sub-navbar">
+        <a href="academics.html">Primary</a>
+        <a href="secondary.html">Secondary</a>
+        <a href="senior-secondary.html">Senior Secondary</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Primary School Education at RGIMS: A Foundation for Lifelong Learning (1st to 5th Grade)</h2>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <p>At RGIMS, we believe that Primary Education is the cornerstone of a child's academic journey and personal growth. Our primary education program is designed to provide a balanced, engaging, and nurturing environment where young learners can develop the essential skills and values to serve them throughout their education. We are committed to making learning enjoyable, interactive, and meaningful, ensuring each child is motivated to explore, create, and discover.</p>
+                </div>
+            </div>
+            <img src="images/Primary1.JPG" alt="Primary Education Image">
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>A Holistic Learning Experience</h3>
+                    <p>At RGIMS, our primary school curriculum offers a comprehensive approach that addresses academics, creativity, physical activities, and social development. We strive to create an enriching environment where children can explore various fields of interest. By focusing on a balanced education, we foster an inquisitive mindset and instill a lifelong love for learning.</p>
+                </div>
+            </div>
+            <img src="images/Primary2.JPG" alt="Students engaged in activities">
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>Personalised Attention and Growth</h3>
+                    <p>At RGIMS, we understand that each child is unique. Our teachers are committed to tailoring their approach to suit every student's learning needs and pace, ensuring that no child is left behind. This personalised attention helps children grasp concepts at their own speed and boosts their confidence, nurturing academic achievement and personal growth in every child.</p>
+                </div>
+            </div>
+            <img src="images/Card1.JPG" alt="Teacher assisting a student">
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>Exploring Through Experiential Learning</h3>
+                    <p>Our educational philosophy emphasises the importance of hands-on learning experiences. Through engaging activities, practical projects, and outdoor exploration, children at RGIMS connect classroom knowledge to the real world. This approach strengthens their understanding and fosters critical thinking, creativity, and problem-solving skills that are essential for their development.</p>
+                </div>
+            </div>
+            <img src="images/Primary4.JPG" alt="Students performing a science experiment">
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>Building Character and Leadership</h3>
+                    <p>At RGIMS, we believe that nurturing character is as vital as academic excellence. We provide opportunities for students to assume leadership roles and responsibilities, both inside and outside the classroom. By emphasising values like empathy, responsibility, and teamwork, we aim to develop confident, compassionate individuals who can lead with integrity and positively influence others.</p>
+                </div>
+            </div>
+            <img src="images/RGIMS-3.JPG" alt="Students participating in leadership activities">
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>A Safe, Nurturing Environment</h3>
+                    <p>At RGIMS, the safety and well-being of our students are our top priority. We provide a secure and welcoming environment that gives parents peace of mind, knowing their children are in good hands. With our team of dedicated professionals and modern facilities, we ensure that each child feels cared for and respected. This nurturing environment allows students to thrive academically, socially, and emotionally, laying the foundation for a successful future.</p>
+                </div>
+            </div>
+            <img src="images/Primary3.JPG" alt="Happy students in a secure school environment">
+        </div>
+
+        <!-- Enquiry Section -->
+        <div class="enquiry">
+            <h3>Speak with our Admission Counsellors for expert advice and insights</h3>
+            <a href="images/admissions.html">Enquire Now</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".tab-link");
+            const sections = document.querySelectorAll(".section");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    links.forEach(l => l.classList.remove("active"));
+                    sections.forEach(section => section.classList.remove("active"));
+                    this.classList.add("active");
+                    document.getElementById(this.getAttribute("data-target")).classList.add("active");
+                });
+            });
+        });
+    </script>
+    
+</body>
+ <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <h1>CONTACT US</h1>
+                <p><i class="fas fa-map-marker-alt"></i> Santhiram Medical College & General Hospital, NH-18, X' Roads, Nerawada, Nandyala, Andhra Pradesh 518501</p>
+                <p><i class="fas fa-envelope"></i> rgmintsch@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +917093803881</p>
+            </div>
+            <div class="footer-image">
+                <img src="images/Rgm.png" alt="College Building">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 RGM International School. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>

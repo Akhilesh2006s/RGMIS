@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>RGM International School</title>
+    
+
+    <style>
+        /* Basic Reset */
+     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(255, 255, 255, 1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background 0.4s ease-in-out;
+        }
+
+        .navbar.transparent {
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: none;
+        }
+
+        .navbar .logo img {
+            height: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #75e5e9;
+        }
+         .banner {
+            width: 100%;
+            height: 130vh; /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 1;
+            color: #75e5e9;
+        }
+        .heading-section {
+    text-align: center;
+    padding: 0px 0 40px; /* Space above the slider */
+}
+
+.heading-section h2 {
+   font-size: 58px;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #0e3970;
+            margin-bottom: 10px;
+}
+ .principal-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            margin: 50px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .principal-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .message {
+            flex: 1;
+            font-size: 18px;
+            color: #333;
+            font-style: italic;
+        }
+    
+          .principal-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .principal-container {
+            display: flex;
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+          .principal-message {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .principal-heading {
+            font-size: 28px;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #0e3970;
+            margin-bottom: 10px;
+        }
+
+        .message-text {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .principal-name {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #555;
+        }
+          @media (max-width: 768px) {
+            .principal-container {
+                flex-direction: column;
+            }
+
+            .principal-image {
+                max-width: 100%;
+            }
+
+            .principal-image img {
+                border-radius: 10px 10px 0 0;
+            }
+        }
+          .footer {
+            background: #0a0a23;
+            color: white;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content {
+            max-width: 50%;
+        }
+
+        .footer-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .footer-content p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .footer-content i {
+            margin-right: 10px;
+        }
+
+        .footer-image img {
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            background: #0a0a23;
+            color: white;
+            padding: 15px;
+        }
+
+
+
+</style>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <img src="Rgm.png" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="academics.html">Academics</a></li>
+        </ul>
+    </nav>
+
+ <div class="banner">
+        <img src="images/About.JPG" alt="Banner Image">
+    </div>   
+
+<section class="heading-section">
+    <h2>    The RGIMS Story </h2>
+</section>
+ <section class="principal-section">
+       
+            <div class="principal-message">
+                <p class="message-text">
+                    " Founded in 2015 by the visionary Dr M. Santhiramudu, RGMIS was born out of a deep commitment to redefine education and inspire young minds to reach their fullest potential. Dr. Santhiramudu's vision, built on over 30 years of success in education, spanning schools, medical colleges, and engineering institutions, led to the establishment of RGMIS, bringing world-class education to the heart of the Rayalaseema region."
+ </p>
+ <br>
+ <p class="message-text">
+    " In the decade since its inception, RGMIS has become a symbol of excellence. With a holistic approach to education, we have created an environment where academic rigour meets the joy of discovery, and every child is empowered to shine. Our unwavering commitment to fostering creativity, leadership, and resilience has transformed countless students into confident, compassionate global citizens."
+</p>
+<br>
+<p class="message-text">
+    " At RGMIS, we offer the renowned CBSE program, which lays a strong academic foundation for our students and paves their way to success. Our students consistently achieve outstanding results, often ranking among the top in the district. They are exceptionally well-prepared for admission to leading universities in India and abroad, a testament to the quality of education at RGMIS."</p>
+<br>
+    <p class="message-text">
+"
+Today, RGMIS is more than a school; it is a community united by the pursuit of knowledge, character, and excellence. As we celebrate a decade of inspiring education, we remain steadfast in our mission to shape a brighter, more inclusive future for every child who walks through our doors, instilling hope and optimism in our students and their families.  
+"
+</p>
+</div>
+ </section>
+<footer>
+        <div class="footer">
+            <div class="footer-content">
+                <h2>CONTACT US</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Santhiram Medical College & General Hospital, NH-18, X' Roads, Nerawada, Nandyala, Andhra Pradesh 518501</p>
+                <p><i class="fas fa-envelope"></i> rgmintsch@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +917093803881</p>
+            </div>
+            <div class="footer-image">
+                <img src="Images/Rgm.png" alt="College Building">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 RGM International School. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

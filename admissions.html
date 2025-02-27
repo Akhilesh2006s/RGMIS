@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>RGM International School</title>
+    
+
+    <style>
+        /* Basic Reset */
+                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+    
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(255, 255, 255, 1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background 0.4s ease-in-out;
+        }
+
+        .navbar.transparent {
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: none;
+        }
+
+        .navbar .logo img {
+            height: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #75e5e9;
+        }
+         .banner {
+            width: 100%;
+            height: 120vh; /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+         h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #a52a2a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        
+  .footer {
+            background: #0a0a23;
+            color: white;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content {
+            max-width: 50%;
+        }
+
+        .footer-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .footer-content p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .footer-content i {
+            margin-right: 10px;
+        }
+
+        .footer-image img {
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            background: #0a0a23;
+            color: white;
+            padding: 15px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+     <nav class="navbar" id="navbar">
+        <div class="logo">
+            <img src="images/Rgm.png" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="academics.html">Academics</a></li>
+        </ul>
+    </nav>
+
+ <div class="banner">
+        <img src="images/Rgims-2.JPG" alt="Banner Image">
+        <div class="banner-text">
+            <h1>ADMISSIONS</h1>
+        </div>
+    </div>   
+    <div class="container">
+        <h1>Admissions</h1>
+        <p>At RGIMS, we strive to make the admission process transparent and straightforward for parents and students. Our aim is to identify and nurture talent while ensuring a seamless journey into our academic community.</p>
+        
+        <h2>Eligibility Criteria</h2>
+        <ul>
+            <li><strong>Grades Offered:</strong> Admissions are open for Grades I to XI for the academic year 2025-26.</li>
+            <li><strong>Academic Requirements:</strong> Students must have successfully passed their previous grade with a minimum of 60% marks.</li>
+            <li><strong>Curriculum:</strong> Applicants must have studied under the CBSE curriculum or an equivalent system.</li>
+            <li><strong>Cut-off Date:</strong> Admissions will close on 30 June of every academic year. Applications received after this date will not be considered.</li>
+        </ul>
+        
+        <h2>Steps to Apply</h2>
+        <h3>Obtain the Application Form</h3>
+        <p>Collect the application form from the school office during working hours.</p>
+        
+        <h3>Submission of Application Form</h3>
+        <ul>
+            <li>Fill out the application form accurately and completely.</li>
+            <li>Submit the form along with the required documents, including the previous grade's report card, transfer certificate, and identification proof.</li>
+        </ul>
+        
+        <h3>Screening Test</h3>
+        <ul>
+            <li>Students applying for admission will be required to appear for a screening test in English and Mathematics.</li>
+            <li>The test evaluates the applicant's foundational understanding and readiness for the applied grade.</li>
+        </ul>
+        
+        <h3>Evaluation and Admission Offer</h3>
+        <ul>
+            <li>Students must meet the required score in the screening test to qualify for admission.</li>
+            <li>Upon qualifying, parents will be notified, and the admission process will be completed after payment of the fees.</li>
+        </ul>
+        
+        <h2>Important Notes</h2>
+        <ul>
+            <li>Admissions are conducted offline only. All applicants must visit the school for submission of documents and the screening test.</li>
+            <li>Seats are limited and allocated on a first-come, first-served basis to eligible candidates.</li>
+        </ul>
+        
+        <h2>Required Documents</h2>
+        <ul>
+            <li>Duly filled application form.</li>
+            <li>Copy of the student’s previous grade report card.</li>
+            <li>Transfer Certificate (if applicable).</li>
+            <li>Passport-size photographs.</li>
+            <li>Proof of identity and address (Aadhar card, passport, etc.).</li>
+        </ul>
+        
+    
+    </div>
+    
+   <body>
+    <!-- Your existing content -->
+    
+    <div class="form-container">
+        <h2>Admission Application Form</h2>
+        <form id="admissionForm">
+            <div class="form-group">
+                <label for="parentName">Parent Name *</label>
+                <input type="text" id="parentName" placeholder="Parent Name" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number *</label>
+                <input type="text" id="mobile" placeholder="Mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter email address">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Enter City">
+            </div>
+            <div class="form-group">
+                <label for="branch">Select Branch *</label>
+                <select id="branch">
+                    <option>Nandyala</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+   </body>
+
+    <script>
+        document.getElementById("admissionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent page refresh
+
+            // Collect form values
+            var parentName = document.getElementById("parentName").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            var city = document.getElementById("city").value;
+            var branch = document.getElementById("branch").value;
+
+            // Define the recipient email
+            var recipientEmail = "akhileshsamayamanthula@gmail.com"; // Replace with your actual email
+
+            // Create the mailto link
+            var mailtoLink = `mailto:${recipientEmail}?subject=Admission Application&body=
+                Parent Name: ${parentName}%0D%0A
+                Mobile: ${mobile}%0D%0A
+                Email: ${email}%0D%0A
+                City: ${city}%0D%0A
+                Branch: ${branch}`;
+
+            // Open the email client
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <h1>CONTACT US</h1>
+                <p><i class="fas fa-map-marker-alt"></i> Santhiram Medical College & General Hospital, NH-18, X' Roads, Nerawada, Nandyala, Andhra Pradesh 518501</p>
+                <p><i class="fas fa-envelope"></i> rgmintsch@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +917093803881</p>
+            </div>
+            <div class="footer-image">
+                <img src="images/Rgm.png" alt="College Building">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 RGM International School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</html>

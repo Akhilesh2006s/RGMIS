@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>RGM International School</title>
+    
+
+    <style>
+        /* Basic Reset */
+                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(255, 255, 255, 1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background 0.4s ease-in-out;
+        }
+
+        .navbar.transparent {
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: none;
+        }
+
+        .navbar .logo img {
+            height: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #75e5e9;
+        }
+         .banner {
+            width: 100%;
+            height: 130vh; /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 1;
+            color: #75e5e9;
+        }
+
+        /* Principal Image and Message Section */
+        .principal-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            margin: 50px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .principal-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .principal-image {
+            flex: 0 0 40%;
+            max-width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .principal-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .message {
+            flex: 1;
+            padding-left: 20px;
+            font-size: 18px;
+            color: #333;
+            font-style: italic;
+        }
+
+        /* School Highlights Section */
+        .highlights-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 50px;
+        }
+
+        /* Left Side (Image with Text) */
+        .left-box {
+            flex: 1;
+            position: relative;
+            background: url('Award.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .left-box::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .principal-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .principal-container {
+            display: flex;
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .principal-image {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        .principal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .principal-message {
+            flex: 1;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .principal-heading {
+            font-size: 28px;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #0e3970;
+            margin-bottom: 10px;
+        }
+
+        .message-text {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .principal-name {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .principal-container {
+                flex-direction: column;
+            }
+
+            .principal-image {
+                max-width: 100%;
+            }
+
+            .principal-image img {
+                border-radius: 10px 10px 0 0;
+            }
+        }
+
+        
+
+        /* Right Side (Green Box with Hover and Shadow) */
+        .right-box {
+            flex: 1;
+            background: #0e3970;
+            padding: 40px;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-in-out forwards;
+            transition: 0.4s ease-in-out;
+        }
+
+        .right-box:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.8s ease-in-out forwards;
+        }
+
+        .highlight-item:nth-child(1) { animation-delay: 0.3s; }
+        .highlight-item:nth-child(2) { animation-delay: 0.5s; }
+        .highlight-item:nth-child(3) { animation-delay: 0.7s; }
+
+        .icon {
+            font-size: 30px;
+            margin-right: 15px;
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(90%); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .hero-slider {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.5rem;
+}
+
+/* Slider Navigation Buttons */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
+}
+
+button.prev { left: 20px; }
+button.next { right: 20px; }
+
+button:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+.heading-section {
+    text-align: center;
+    padding: 0px 0 40px; /* Space above the slider */
+}
+
+.heading-section h2 {
+   font-size: 58px;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #0e3970;
+            margin-bottom: 10px;
+}
+    .features-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.feature {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.feature p {
+    font-size: 1.2rem;
+   font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #0e3970;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+.enquire-container {
+    background: #f5f5f5; /* Light gray background */
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 40px auto;
+}
+
+.enquire-text {
+    font-size: 1.5rem;
+    color: #3498db; /* Your royal blue color */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.enquire-button {
+    display: inline-block;
+    background: #0e3970; /* Your button color (gold/yellow) */
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.enquire-button:hover {
+    background: #07f3ff; /* Slightly darker gold */
+}
+
+   .footer {
+            background: #0a0a23;
+            color: white;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content {
+            max-width: 50%;
+        }
+
+        .footer-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .footer-content p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .footer-content i {
+            margin-right: 10px;
+        }
+
+        .footer-image img {
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            background: #0a0a23;
+            color: white;
+            padding: 15px;
+        }
+   </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <img src="images/Rgm.png" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="academics.html">Academics</a></li>
+        </ul>
+    </nav>
+
+ <div class="banner">
+        <img src="images/Banne.JPG" alt="Banner Image">
+    </div>   
+     <section class="principal-section">
+        <div class="principal-container">
+            <div class="principal-image">
+                <img src="Chairman.JPG" alt="Principal">
+            </div>
+            <div class="principal-message">
+                <h2 class="principal-heading">Message from the Chairman</h2>
+                <p class="message-text">
+                    "RGM International School (RGMIS), launched in 2015-16, is committed to excellence in holistic education. With over 35 years of experience in guiding students from school to professional colleges, we aim to create a nurturing environment where academics, sports, and co-curricular activities shape students into global citizens. Our innovative teaching methods and student-centered approach foster growth and success.  
+
+Wishing all teachers and students a happy and vibrant learning journey!"
+                </p>
+                <p class="principal-name">- Gayatri ghanta</p>
+            </div>
+        </div>
+     </section>
+     <section class="principal-section">
+        <div class="principal-container">
+            <div class="principal-image">
+                <img src="images/principal.jpg" alt="Principal">
+            </div>
+            <div class="principal-message">
+                <h2 class="principal-heading">Message from the Principal</h2>
+                <p class="message-text">
+                    "At RGM International School, we strive to provide a holistic education 
+                    that fosters academic excellence, character development, and lifelong learning. 
+                    Our dedicated faculty and staff work tirelessly to create an environment where students 
+                    can thrive and reach their fullest potential."
+                </p>
+                <p class="principal-name">- Gayatri ghanta</p>
+            </div>
+        </div>
+     </section>
+
+   <!-- School Highlights Section -->
+<section class="highlights-section">
+    <div class="left-box">
+    </div>
+    <div class="right-box">
+        <div class="highlight-item">
+            <img src="images/Award.png" alt="National School Award" style="width: 40px; height: 40px; margin-right: 15px;">
+            National School Award for Best Management System (Andhra, 2020)
+        </div>
+        <div class="highlight-item">
+            <img src="images/Award.png" alt="Speaking Tree Best School Award" style="width: 40px; height: 40px; margin-right: 15px;">
+            Speaking Tree Best School Award (2022-2023)
+        </div>
+        <div class="highlight-item">
+            <img src="images/Award.png" alt="Best Futuristic Education Award" style="width: 40px; height: 40px; margin-right: 15px;">
+            National School Award for Best Futuristic Education (2023)
+        </div>
+        <div class="highlight-item">
+            <img src="images/Award.png" alt="British Council Best School Award" style="width: 40px; height: 40px; margin-right: 15px;">
+            British Council Best School Award (Academic Year 2022-2023)
+        </div>
+    </div>
+</section>
+
+</section>
+<section class="heading-section">
+    <h2>Why Choose RGIMS?</h2>
+</section>
+<section class="hero-slider">
+    <div class="slide active" style="background-image: url('Rgmbuilding.jpg');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>State of the Art Campus</h1>
+            <p>Spread across 8 acres, our campus offers modern facilities harmoniously blended with </p>
+            <p>natural serenity, fostering exploration and growth.</p>
+        </div>
+    </div>
+    <div class="slide" style="background-image: url('Rgims-2.JPG');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Dedicated Faculty</h1>
+            <p>Highly qualified and experienced teachers who are passionate about nurturing every child's potential.
+</p>
+        </div>
+    </div>
+    <div class="slide" style="background-image: url('RGIMS-3.JPG');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>World-Class Sports Facilities</h1>
+            <p>From athletics to exclusive horse riding classes, we promote physical fitness and teamwork.
+</p>
+        </div>
+    </div>
+    <div class="slide " style="background-image: url('RGIMS-4.JPG');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Focus on Holistic Development</h1>
+            <p>A balanced emphasis on academics, extracurricular activities, and life skills for well-rounded growth.
+ </p>
+        </div>
+    </div>
+    <div class="slide" style="background-image: url('RGIMS-5.JPG');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Residential and Day School Options</h1>
+            <p>Flexible options for families, with separate hostel facilities for boys and girls.
+</p>
+        </div>
+    </div>
+    <div class="slide" style="background-image: url('Award.JPG');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Proven Track Record of Excellence </h1>
+            <p>A decade of inspiring academic achievements, awards, and recognitions, shaping future global leaders.
+</p>
+        </div>
+    </div>
+
+
+    <!-- Navigation Buttons -->
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+</section>
+<script>
+    let slides = document.querySelectorAll(".slide");
+let currentIndex = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+    });
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
+
+// Auto Slide every 5 seconds
+setInterval(nextSlide, 5000);
+
+</script>
+<section class="features-section">
+    <div class="feature">
+        <img src="images/Box-6.JPG" alt="Immersive Experiential Learning">
+        <p>Immersive Experiential Learning</p>
+    </div>
+    <div class="feature">
+        <img src="images/Box2.JPG" alt="Nurturing Character Development">
+        <p>Nurturing Character Development And Individual Growth With Core Values</p>
+    </div>
+    <div class="feature">
+        <img src="images/Box3.JPG" alt="Engaging in Scientific Discoveries">
+        <p>Engaging In Scientific Discoveries</p>
+    </div>
+    <div class="feature">
+        <img src="images/Box4.JPG" alt="Unleashing Creative Expression">
+        <p>Unleashing Creative Expression Through Arts</p>
+    </div>
+    <div class="feature">
+        <img src="images/Box5.JPG" alt="Excelling in Sports">
+        <p>Excelling In Sports And Physical Endeavours</p>
+    </div>
+    <div class="feature">
+        <img src="images/Box1.JPG" alt="Enriching Cultures">
+        <p>Enriching Cultures And Global Exchange</p>
+    </div>
+</section>
+<div class="enquire-container">
+    <p class="enquire-text">Speak to our Admission Counsellors to know more</p>
+    <a href="admissions.html" class="enquire-button">
+        Enquire Now
+    </a>
+</div>
+<footer>
+        <div class="footer">
+            <div class="footer-content">
+                <h2>CONTACT US</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Santhiram Medical College & General Hospital, NH-18, X' Roads, Nerawada, Nandyala, Andhra Pradesh 518501</p>
+                <p><i class="fas fa-envelope"></i> rgmintsch@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +917093803881</p>
+            </div>
+            <div class="footer-image">
+                <img src="images/Rgm.png" alt="College Building">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 RGM International School. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

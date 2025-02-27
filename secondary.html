@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>RGM International School</title>
+    <style>
+        /* Basic Reset */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(255, 255, 255, 1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background 0.4s ease-in-out;
+        }
+
+        .navbar .logo img {
+            height: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #75e5e9;
+        }
+
+        /* Sub Navbar */
+        .sub-navbar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 0;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 100px; /* Adjust if needed */
+            position: fixed;
+            top: 10px; /* Place it below the main navbar */
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .sub-navbar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .sub-navbar a:hover {
+            color: #75e5e9;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 900px;
+            margin: 300px auto; /* Adjusted margin to accommodate fixed navbar */
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Text Box Styling */
+        .text-box {
+            background-color: #f9f9f9; /* Light grey background */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the box */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            margin-bottom: 20px; /* Space between boxes */
+        }
+
+        /* Alternating Paragraph Colors */
+        .text-box p {
+            color: #333; /* Dark grey text */
+        }
+
+        /* Alternating Layout for Paragraphs and Images */
+        .content .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .content .section:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .content .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .content .section .text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .content .section img {
+            flex: 1;
+            max-width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enquiry Section */
+        .enquiry {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .enquiry a {
+            display: inline-block;
+            background-color: #0073e6;
+            color: #fff;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .enquiry a:hover {
+            background-color: #005bb5;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 20px;
+            }
+
+            .navbar .logo img {
+                height: 60px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .sub-navbar {
+                flex-wrap: wrap;
+                padding: 10px 0;
+                margin-top: 80px;
+            }
+
+            .sub-navbar a {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .content {
+                margin: 200px auto;
+                padding: 10px;
+            }
+
+            .content .section {
+                flex-direction: column;
+            }
+
+            .content .section .text {
+                padding: 10px;
+            }
+
+            .content .section img {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+
+            .text-box {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .enquiry a {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+        }
+        .footer {
+            background: #0a0a23;
+            color: white;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content {
+            max-width: 50%;
+        }
+
+        .footer-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .footer-content p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .footer-content i {
+            margin-right: 10px;
+        }
+
+        .footer-image img {
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            background: #0a0a23;
+            color: white;
+            padding: 15px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/Rgm.png" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="academics.html">Academics</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sub Navbar -->
+    <nav class="sub-navbar">
+        <a href="academics.html">Primary</a>
+        <a href="secondary.html">Secondary</a>
+        <a href="senior-secondary.html">Senior Secondary</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Secondary School Education at RGIMS (6th to 10th Grade)</h2>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <p>At RGIMS, our Secondary School Education is thoughtfully designed to offer a comprehensive and challenging academic foundation that prepares students for higher education and equips them for lifelong success. We recognise that the secondary school years are crucial for shaping the future of our students, and we are committed to providing an environment that fosters intellectual growth, personal development, and the cultivation of essential life skills.</p>
+                </div>
+            </div>
+            <img src="images/second1.JPG" alt="Secondary Education Image">
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>Academic Excellence and Rigorous Curriculum</h3>
+                    <p>Our secondary school program is structured to offer a robust curriculum that meets the highest standards of education. With subjects like Mathematics, Science, Social Studies, English, and various electives, students are empowered to develop a deep understanding of key academic areas. We ensure that every student has the skills necessary to excel in their chosen field of study.</p>
+                </div>
+            </div>
+            <img src="images/second2.JPG" alt="Students studying">
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>Fostering Critical Thinking and Problem-Solving</h3>
+                    <p>We emphasise the importance of critical thinking and problem-solving in our secondary education curriculum. Our teaching methods encourage students to question, analyse, and form independent conclusions, ensuring that they not only absorb information but actively engage with it. Through project-based learning and real-world scenarios, students are challenged to think creatively and critically about the world around them.</p>
+                </div>
+            </div>
+            <img src="images/second3.JPG" alt="Students solving problems">
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>Holistic Development Beyond Academics</h3>
+                    <p>At RGIMS, we believe in the holistic development of our students. Our secondary school program includes various extracurricular activities, including sports, arts, debates, and leadership opportunities. These activities complement the academic curriculum and help students develop social, emotional, and physical well-being, preparing them to be well-rounded individuals and confident leaders.</p>
+                </div>
+            </div>
+            <img src="images/second4.JPG" alt="Students participating in extracurricular activities">
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>Personalised Guidance and Career Counselling</h3>
+                    <p>We provide personalised guidance and career counselling to ensure that each student is on the right path for their future. From academic mentorship to career exploration, we support our students in making informed decisions about their educational and professional goals. With access to career workshops, internships, and university admission advice, our students are well-prepared for the next steps in their educational journey.</p>
+                </div>
+            </div>
+            <img src="images/secondry1.JPG" alt="Career counselling session">
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <div class="text">
+                <div class="text-box">
+                    <h3>Preparing for Global Opportunities</h3>
+                    <p>As part of our commitment to global education, RGIMS ensures that students are prepared for an increasingly interconnected world. Our curriculum and learning experiences are designed to enhance global awareness and cross-cultural understanding, helping students develop the skills and mindset needed to succeed in an international environment. Whether through exchange programs, global competitions, or language proficiency courses, we give students the tools to succeed globally.</p>
+                </div>
+            </div>
+            <img src="images/Banne.JPG" alt="Students in a global exchange program">
+        </div>
+
+       
+        <!-- Enquiry Section -->
+        <div class="enquiry">
+            <h3>Speak with our Admission Counsellors for expert advice and insights</h3>
+            <a href="admissions.html">Enquire Now</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".tab-link");
+            const sections = document.querySelectorAll(".section");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    links.forEach(l => l.classList.remove("active"));
+                    sections.forEach(section => section.classList.remove("active"));
+                    this.classList.add("active");
+                    document.getElementById(this.getAttribute("data-target")).classList.add("active");
+                });
+            });
+        });
+    </script>
+</body>
+
+ <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <h1>CONTACT US</h1>
+                <p><i class="fas fa-map-marker-alt"></i> Santhiram Medical College & General Hospital, NH-18, X' Roads, Nerawada, Nandyala, Andhra Pradesh 518501</p>
+                <p><i class="fas fa-envelope"></i> rgmintsch@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +917093803881</p>
+            </div>
+            <div class="footer-image">
+                <img src="images/Rgm.png" alt="College Building">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 RGM International School. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>
